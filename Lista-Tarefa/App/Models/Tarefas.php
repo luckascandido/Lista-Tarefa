@@ -21,10 +21,25 @@ use MF\Model\Model;
     }
     //salvar
     public function salvarTarefa(){
-        
+        $query= "insert into tb_tarefas(tarefa)values(:tarefa)";
+        $stmt= $this->db->prepare($query);
+        $stmt->bindValue(":tarefa",$this->__get("tarefa"));
+        $stmt->execute();  
     }
     //recuperar
     public function getAll(){
+        $query = "
+        select 
+         t.id, t.tarefa,  DATE_FORMAT(t.data_cadastro, '%d/%m/%Y %H:%i') as data 
+        from 
+         tb_tarefas as t 
+         left join tb_status as u on (t.fk_id_status = u.id)
+        order by
+          t.data_cadastro desc
+         ";
+        $stmt= $this->db->prepare($query );
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
     public function deletarTarefa(){
      
