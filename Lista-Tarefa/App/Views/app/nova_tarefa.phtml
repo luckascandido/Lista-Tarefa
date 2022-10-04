@@ -16,13 +16,19 @@
 								<h4>Nova tarefa</h4>
 								<hr />
 
-								<form>
+								<form method="POST" action="/cadastro_tarefa">
 									<div class="form-group">
 										<label>Descrição da tarefa:</label>
-										<input type="text" class="form-control" placeholder="Exemplo: Lavar o carro">
+										<input type="text" name="descricao" class="form-control" placeholder="Exemplo: Lavar o carro">
 									</div>
 
 									<button class="btn btn-success">Cadastrar</button>
+									<?php if($this->view->erroCadastro){ ?>
+									<small class="form-text text-danger">*Erro, escreva alguma tarefa. </small>
+									<?php  }?>
+									<?php if($this->view->Cadastrosucess){ ?>
+									<small class="form-text text-info">Tarefa Cadastrada Corretamente. </small>
+									<?php  }?>
 								</form>
 							</div>
 						</div>

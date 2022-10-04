@@ -2,7 +2,7 @@
 namespace App\Models;
 use MF\Model\Model;
 
-  class Tarefas extends Model{
+  class Status extends Model{
    
     private $id;
     private $status;

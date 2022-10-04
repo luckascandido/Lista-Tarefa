@@ -18,6 +18,11 @@ class Route extends Bootstrap {
 			'controller' => 'appController',
 			'action' => 'nova_tarefa'
 		);
+		$routes['cadastro_tarefa'] = array(
+			'route' => '/cadastro_tarefa',
+			'controller' => 'appController',
+			'action' => 'cadastro_tarefa'
+		);
 		$routes['todas_tarefas'] = array(
 			'route' => '/todas_tarefas',
 			'controller' => 'appController',
