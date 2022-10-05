@@ -8,14 +8,17 @@ use App\Models\Tarefas;
 use MF\Model\Container;
 
 class AppController extends Action {
-	
+	//chama a pagina nova_tarefa
 	public function nova_tarefa() {
 		$this->view->erroCadastro = false;
 		$this->view->Cadastrosucess = false;
 		$this->render('nova_tarefa', "layout");
 	}
+	//chama a pagina todas_tarefas
 	public function todas_tarefas() {
-
+		$tarefas = container::getModel("Tarefas");
+        $tarefas= $tarefas->getAll();
+        $this->view->tarefas =  $tarefas;
 		$this->render('todas_tarefas', "layout");
 	}
 	public function cadastro_tarefa(){

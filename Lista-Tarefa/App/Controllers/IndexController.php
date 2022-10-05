@@ -10,8 +10,9 @@ use MF\Model\Container;
 class IndexController extends Action {
 
 	public function index() {
+		//recebe todas as tarefas e chama a pagina index.
 		$tarefas = container::getModel("Tarefas");
-        $tarefas= $tarefas->getAll();
+        $tarefas= $tarefas->tarefasPendentes();
         $this->view->tarefas =  $tarefas;
 		$this->render('index', "layout");
 	}
