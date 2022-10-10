@@ -3,7 +3,7 @@
             
             //criar um form de edição
             let form = document.createElement('form')
-            form.action = '/'
+            form.action = '/editarform'
             form.method = 'post'
             form.className = 'row'
 
@@ -34,16 +34,14 @@
 
             //incluir button no form
             form.appendChild(button)
-        
-
-            /*
+            
             //selecionar a div tarefa
-            let tarefa = document.getElementById('tarefa_'+id)
-
+            let tarefaform = document.getElementById('tarefa_'+idtarefa)
+           
             //limpar o texto da tarefa para inclusão do form
-            tarefa.innerHTML = ''
+            tarefaform.innerHTML = ''
 
             //incluir form na página
-            tarefa.insertBefore(form, tarefa[0])
-            */
+            tarefaform.insertBefore(form, tarefaform[0])
+            
         }

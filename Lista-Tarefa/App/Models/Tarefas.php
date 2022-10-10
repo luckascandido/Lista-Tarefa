@@ -59,6 +59,21 @@ use MF\Model\Model;
       $stmt->execute();
       return $stmt->fetchAll(\PDO::FETCH_ASSOC);
   }
+      public function editarTarefa(){
+        $query = "
+        update 
+        tb_tarefas 
+        SET
+        tarefa = :tarefa
+        where
+        id = :id
+       ";
+       $stmt= $this->db->prepare($query);
+       $stmt->bindValue(":tarefa",$this->__get("tarefa"));
+       $stmt->bindValue(":id",$this->__get("id"));
+       $stmt->execute();
+      }
+
     //deleta a tarefa no banco
         public function deletarTarefa(){
      

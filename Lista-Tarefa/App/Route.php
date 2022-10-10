@@ -28,6 +28,11 @@ class Route extends Bootstrap {
 			'controller' => 'appController',
 			'action' => 'todas_tarefas'
 		);
+		$routes['editarform'] = array(
+			'route' => '/editarform',
+			'controller' => 'appController',
+			'action' => 'editarform'
+		);
 
 		$this->setRoutes($routes);
 	}

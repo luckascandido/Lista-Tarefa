@@ -17,7 +17,7 @@
 								<hr />
 								<?php foreach ($this->view->tarefas  as $id => $tarefas) {  ?>
 								<div  class=" row mb-3 d-flex align-items-center tarefa">
-									<div  class="  col-sm-9"><p><strong ><?=$tarefas['tarefa'] ?></strong> <strong >(<?=$tarefas['status'] ?>)</strong> <span class="text text-muted"><?=$tarefas['data'] ?></div>
+									<div id="tarefa_<?=$tarefas['id']?>"  class="  col-sm-9"><p><strong ><?=$tarefas['tarefa'] ?></strong> <strong >(<?=$tarefas['status'] ?>)</strong> <span class="text text-muted"><?=$tarefas['data'] ?></div>
 									<div class="col-sm-3 mt-2 d-flex justify-content-between">
 										<i class="fas fa-trash-alt fa-lg text-danger"></i>
 										<i  class=" fas fa-edit fa-lg text-info" onclick="editar('<?=$tarefas['tarefa']?>',<?=$tarefas['id']?>)" ></i>

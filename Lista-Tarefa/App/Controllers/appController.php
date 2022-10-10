@@ -36,6 +36,15 @@ class AppController extends Action {
 			$this->render('nova_tarefa', "layout");
 		}
 	}
+	public function editarform() {
+		$tarefa = container::getModel('Tarefas');
+		$tarefa->__set('tarefa',$_POST['tarefa']);
+		$tarefa->__set('id',$_POST['id']);
+		$tarefa->__set('data_cadastro', date('m-d-Y h:i:s a', time()));
+		$tarefa->editarTarefa();
+		header('Location:/todas_tarefas');
+
+	}
 }
 
 
